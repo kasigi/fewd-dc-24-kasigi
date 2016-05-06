@@ -1,12 +1,13 @@
 ![GeneralAssemb.ly](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/images/ga.png "GeneralAssemb.ly")
-
+   
 # FEWD24 Course Repository
 Welcome to Front-End Web Development at General Assembly! This is where we will be hosting all class slides, assignments, starter code, and more.
 
 ## Important Links
 * [Homework Submission](http://goo.gl/forms/kKj1YXEsw1) - Submit your homework info here.
 
-
+ 
+ 
 
 ## Course Outline (tentative, subject to change)
 Week | Date | Description
