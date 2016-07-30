@@ -1,6 +1,11 @@
-
 jQuery(document).ready(function(){
-  jQuery('#submit').click(function(e) {
+
+  jQuery('#submit').click(clickedUponMe);
+
+});
+
+
+  function clickedUponMe(e) {
     e.preventDefault();
     var comparison;
     var a = Number(jQuery('#a').val());
@@ -17,6 +22,5 @@ jQuery(document).ready(function(){
     }
 
     jQuery('#comparison').text(comparison);
-  });
-});
+  }
 

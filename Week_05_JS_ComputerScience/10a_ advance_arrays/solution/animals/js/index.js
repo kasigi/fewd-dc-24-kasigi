@@ -1,5 +1,5 @@
 //Create variables to store images, increment variable, and a maximum images variable.
-var images=["images/animal2.jpg","images/animal3.jpg","images/animal4.jpg","images/animal5.jpg","images/animal6.jpg","images/animal7.jpg",];
+var images=["images/animal2.jpg","images/animal3.jpg","images/animal4.jpg","images/animal5.jpg","images/animal6.jpg","images/animal7.jpg"];
 var i=0;
 var maxImages = images.length-1;
 
@@ -30,15 +30,15 @@ function nextImage(){
 //Function to change the image.
 function changeImage(){
 	//Update img src to current image.
-	$("#carousel-image").attr("src",images[i]);
+	jQuery("#carousel-image").attr("src",images[i]);
 	//Remove selected attribute.
-	//$("#your-vote>option").removeAttr("selected");
+	//jQuery("#your-vote>option").removeAttr("selected");
 }
 
 //Event listeners.
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	//Next image click.
-	$("#buttons-wrapper #next").on("click",nextImage);
+	jQuery("#buttons-wrapper #next").on("click",nextImage);
 	//Previous image click.
-	$("#buttons-wrapper #back").on("click",previousImage);
+	jQuery("#buttons-wrapper #back").on("click",previousImage);
 });

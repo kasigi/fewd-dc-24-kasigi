@@ -26,57 +26,57 @@ BONUS:
 //Create a function to count the number of to do items.
 function count (){
   //Variable to store total number of list items.
-  var allItems = $('li').length;
+  var allItems = jQuery('li').length;
   //Variable to store total number of checked items.
-  var checkedItems = $('#todo-check:checked').length;
+  var checkedItems = jQuery('#todo-check:checked').length;
   //Variable to store value when items are checked.
   var todosLeft = allItems - checkedItems;
   //Update number of items left.
-  $('#count').html(todosLeft);
+  jQuery('#count').html(todosLeft);
 };
 
 //Add new item on form submit.
-$('#new').submit(function(event){
+jQuery('#new').submit(function(event){
   //Prevent page refresh.
   event.preventDefault();
   //Grab value of form input & save into a variable.
-  var newItem = $('#newItem').val();
+  var newItem = jQuery('#newItem').val();
   //Create variable to store delete button HTML string.
   var delButton = '<button id="delete" type="button">Delete</button>';
   //Combine newItem and delButton into a HTML list item string to add onto page.
   var todo = '<li><div class=listBox><label><input type="checkbox" name="todo-check" id="todo-check">&nbsp;&nbsp;Done?  <span class="todo-content">' + newItem + '</span></label></div>' + delButton + '</li>';
 
   //Take the new list item and append it to the ul. 
-  $('#todos').append(todo);
+  jQuery('#todos').append(todo);
   
   //Run the count function to update the count.
   count();
 
   //Clear out the text input.
-  $('#newItem').val('');
+  jQuery('#newItem').val('');
 });
 
 //Event listener for click on #todo-check.
-$('body').on('click', '#todo-check' , count);
+jQuery('body').on('click', '#todo-check' , count);
 
 //Event listener for click on #delete.
-$('body').on('click', '#delete',function(){
+jQuery('body').on('click', '#delete',function(){
   //Remove the entier li for the deleted to-do item.
-  $(this).parents('li').remove();
+  jQuery(this).parents('li').remove();
   //Update count.
   count();
 });
 
 //Listen for click on #clear.
-$('#clear').click(function(){
+jQuery('#clear').click(function(){
   //Remove all list items.
-  $('li').remove();
+  jQuery('li').remove();
   //Reset #count to zero.
-  $('#count').html('0');
+  jQuery('#count').html('0');
 });
 
 //Listen for click on #clearCompleted.
-$('#clearCompleted').click(function(){
+jQuery('#clearCompleted').click(function(){
   //Remove checked list items.
-  $('#todo-check:checked').parent().remove();
+  jQuery('#todo-check:checked').parent().remove();
 });

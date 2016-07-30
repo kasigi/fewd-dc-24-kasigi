@@ -23,6 +23,42 @@ BONUS:
 
 */
 
+var toDoList = [];
+var itemsToDo = 0;
+var itemsTotal = 0;
+
+var toDoListSample=[false,"My Todo Item"];
+toDoList = [toDoListSample,toDoListSample,toDoListSample,[true,"Odd Man Out"]];
+
+
+
+function renderToDo(){
+  itemsTotal = toDoList.length;
+  itemsToDo = 0;
+
+  var renderedCode = "";
+
+  for(q=0;q<toDoList.length;q++){
+    renderedCode = renderedCode + '<li><div class="listBox"><label><input type="checkbox" name="todo-check" id="todo-check-'+q+'" ';
+    var checked = "";
+      if(toDoList[q][0]==false){
+        itemsToDo++;
+      }else{
+        checked = "checked";
+      }
+    renderedCode = renderedCode + checked + '>&nbsp;&nbsp;Done?  <span class="todo-content">'; 
+      renderedCode = renderedCode + toDoList[q][1];
+    renderedCode = renderedCode + '</span></label></div><button id="delete'+q+'" type="button">Delete</button></li>';
+  }
+
+jQuery("#todos").html(renderedCode);
+jQuery("#count").text(itemsToDo);
+}
+
+
+
+renderToDo();
+
 //Create a function to count the number of to do items.
 
   //Variable to store total number of list items.
@@ -36,24 +72,25 @@ BONUS:
 
 
 //Add new item on form submit.
+function addNewToDo(e){
 
   //Prevent page refresh.
+  e.preventDefault();
 
   //Grab value of form input & save into a variable.
+  var newItem = [false,""];
 
-  //Create variable to store delete button HTML string.
+  newItem[1] = jQuery("#newItem").val();
 
-  //Combine newItem and delButton into a HTML list item string to add onto page.
-
-
-  //Take the new list item and append it to the ul. 
-
+  toDoList.push(newItem);
   
-  //Run the count function to update the count.
-
+  renderToDo();
 
   //Clear out the text input.
+  jQuery("#newItem").val("");
+}
 
+jQuery("#new").on("submit",addNewToDo);
 
 //Event listener for click on #todo-check.
 

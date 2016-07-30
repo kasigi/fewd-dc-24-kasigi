@@ -136,8 +136,9 @@ What if I would like to know how long my array is (how many elements)?
 Allows you to run code using each element from the array as a value
 Syntax:
 
-	Array.forEach
-
+    for(var q=0;q<myArray.length;q++){
+        // do something to myArray[q]
+    }
 
 
 ---
